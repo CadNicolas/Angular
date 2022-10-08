@@ -1,36 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Comentario } from 'src/app/interfaces/Comentarios';
-
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Comentario} from 'src/app/interfaces/Comentarios';
 @Component({
   selector: 'app-agregar-editar-comentario',
   templateUrl: './agregar-editar-comentario.component.html',
   styleUrls: ['./agregar-editar-comentario.component.css']
 })
 export class AgregarEditarComentarioComponent implements OnInit {
-  agregaComentario: FormGroup;
+  agregaComentarios: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.agregaComentario=this.fb.group({
+  constructor(private fb: FormBuilder) { 
+    this.agregaComentarios=this.fb.group({
       titulo:['',Validators.required],
       autor:['',Validators.required],
       texto:['',Validators.required]
     })
-   }
+  }
 
   ngOnInit(): void {
   }
 
-  agregar(){
-    console.log(this.agregaComentario);
 
-    const comentario:Comentario={
-      titulo: this.agregaComentario.get('titulo')?.value,
-      autor: this.agregaComentario.get('autor')?.value,
-      texto: this.agregaComentario.get('texto')?.value,
+  agregar() {
+    const comentario: Comentario={
+      titulo:this.agregaComentarios.get('titulo')?.value,
+      autor:this.agregaComentarios.get('autor')?.value,
+      texto:this.agregaComentarios.get('texto')?.value,
       fechaCreacion: new Date()
     }
-    console.log(comentario);
+    console.log(comentario)
   }
-
 }

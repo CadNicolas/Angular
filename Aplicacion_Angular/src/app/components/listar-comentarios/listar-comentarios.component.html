@@ -2,11 +2,11 @@
     <div class="col lg6">
         <h3>Listado de comentarios</h3>
     </div>
-    <div class="col lg6">
-        <button class="btn btn-primary float-end" routerLink="/add">Agregar comentario</button>
-    </div>
 </div>
-<table *ngIf="listComentarios.length>0" class="table table-hover mt-3">
+<div class="col lg6">
+    <button class="btn btn-primary float-end" routerLink="/add">agregar comentario</button>
+</div>
+<table ngif="listComentarios.length>0" class="table table-hover mt-3">
     <thead>
         <tr>
             <td>Titulo</td>
@@ -16,17 +16,28 @@
             <td></td>
         </tr>
     </thead>
+
+
+
     <tbody>
-        <tr *ngFor="let comentario of listComentarios">
-            <td>{{comentario.titulo}}</td>
-            <td>{{comentario.autor}}</td>
-            <td>{{comentario.fechaCreacion | date: 'dd/mm/yyyy'}}</td>
-            <td style="width: 5%;"><button class="btn btn-primary btn-sm float-end">Editar</button></td>
-            <td style="width: 5%;"><button class="btn btn-danger btn-sm float-end">Eliminar</button></td>
-        </tr>
+       <tr *ngFor="let comentario of listComentarios">
+
+        <td>{{comentario.titulo}}</td>
+        <td>{{comentario.autor}}</td>
+        <td>{{comentario.fechaCreacion|date:'dd/mm/yyyy'}}</td>
+        <td style="width:5%">
+            <button class="btn btn-primary btn-sm float-end">Editar</button>
+            
+        </td>
+        <td style="width:5%">
+            <button class="btn btn-danger btn-sm float-end">Eliminar</button>
+        </td>
+
+       </tr>
     </tbody>
 </table>
 
-<div *ngIf="listComentarios.length == 0" class="row mt5">
-    <h3>No hay ningun comentario</h3>
+<div *ngif="listComentarios.length==0" class="row mt5">
+    <h5>no hay ningun comentario registrado</h5>
+
 </div>

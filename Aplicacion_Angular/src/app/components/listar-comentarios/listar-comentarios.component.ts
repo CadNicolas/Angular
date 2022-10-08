@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Comentario } from 'src/app/interfaces/Comentarios';
+import {Comentario} from 'src/app/interfaces/Comentarios';
 
 @Component({
   selector: 'app-listar-comentarios',
@@ -8,14 +8,27 @@ import { Comentario } from 'src/app/interfaces/Comentarios';
 })
 export class ListarComentariosComponent implements OnInit {
 
-  listComentarios: Comentario [] = [
-    {
-      titulo: 'Angular Developer',
-      autor: 'Nicolas Cadena',
-      fechaCreacion: new Date(), texto:'Ejem'
-    }
-  ]
+listComentarios: Comentario [] =[
+{
+  titulo:'CyberSecurity',
+  autor: 'Jorge Collazos',
+  fechaCreacion: new Date(), 
+  texto:'Ejemplo'
+},
+{
+  titulo:'Angular Developer',
+  autor: 'Nicolas Cadena',
+  fechaCreacion: new Date(), 
+  texto:'datos'
+},
+{
+  titulo:'UI/UX Designer',
+  autor: 'Juan Moreno',
+  fechaCreacion: new Date(), 
+  texto:'datos'
+}
 
+]
   constructor() { }
 
   ngOnInit(): void {
