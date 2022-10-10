@@ -11,20 +11,20 @@ export class ListarDatosPersonalesComponent implements OnInit {
 
   listDatosPersonales: Datos [] =[
     {
-      id:123366,
-      nombre:'christian',
-      apellido:'vidal',
-      direccion:'kjdsajk',
-      email:'kjsdh',
-      telefono:222222
+      id:123455,
+      nombre:'Nicolas',
+      apellido:'Cadena',
+      direccion:'Ipiales',
+      email:'nicolascad...',
+      telefono:3171234
     },
     {
-      id:123366,
-      nombre:'camilo',
-      apellido:'ortiz',
-      direccion:'kjdsajk',
-      email:'kjsdh',
-      telefono:22222254
+      id:123456,
+      nombre:'Bramdo',
+      apellido:'Vallejo',
+      direccion:'',
+      email:'nicolas...',
+      telefono:31712345
     },
   ]
   constructor() { }
